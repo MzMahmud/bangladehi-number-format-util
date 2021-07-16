@@ -45,8 +45,8 @@ input
 ৩.১৪১৫৯২৬৫৩৫৯
 
 getFormattedNumber(input)
-40,69,40,404
-৪০,৬৯,৪০,৪০৪
+3.14159265359
+৩.১৪১৫৯২৬৫৩৫৯
 
 convertToWord(input)
 three point one four one five nine two six five three five nine
