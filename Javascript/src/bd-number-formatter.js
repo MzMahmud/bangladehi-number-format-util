@@ -10,7 +10,7 @@ export default function getFormattedNumber(numStr) {
     const [beforeDecimal, afterDecimal] = numStr.split('.');
 
     formattedNumber += getFormattedInteger(beforeDecimal);
-    if(afterDecimal) formattedNumber += `.${afterDecimal}`;
+    if (afterDecimal) formattedNumber += `.${afterDecimal}`;
 
     return formattedNumber;
 }
@@ -19,7 +19,7 @@ function getFormattedInteger(numStr) {
     if (numStr.length <= 7)
         return getFormattedNumberBelowCrore(numStr);
 
-    const { lakh, crore } = getLakhCroreSplit(numStr);
+    const {lakh, crore} = getLakhCroreSplit(numStr);
 
     return getFormattedInteger(crore) + "," + getFormattedNumberBelowCrore(lakh);
 }
@@ -27,7 +27,7 @@ function getFormattedInteger(numStr) {
 export function getLakhCroreSplit(numStr) {
     numStr = String(numStr);
     if (numStr.length <= 7) {
-        return { lakh: numStr, crore: "" };
+        return {lakh: numStr, crore: ""};
     }
     const reversedDigit = [...numStr].reverse();
     return {
