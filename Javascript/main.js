@@ -1,5 +1,5 @@
 import convertToWord from "./src/bd-number-in-word.js"
-import { getFormattedNumber } from "./src/bd-number-formatter.js"
+import getFormattedNumber from "./src/bd-number-formatter.js"
 import { convertString } from "./src/char-processors.js"
 import { BANGLA, ENGLISH } from "./src/constants.js"
 

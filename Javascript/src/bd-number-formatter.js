@@ -1,4 +1,4 @@
-export function getFormattedNumber(numStr) {
+export default function getFormattedNumber(numStr) {
     numStr = String(numStr);
     if (numStr.length <= 7)
         return getFormattedNumberBelowCrore(numStr);

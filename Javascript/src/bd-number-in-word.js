@@ -1,5 +1,5 @@
 import {constantByLanguage, numberToWord} from './constants.js'
-import {getFormattedNumber, getLakhCroreSplit} from './bd-number-formatter.js'
+import getFormattedNumber, {getLakhCroreSplit} from './bd-number-formatter.js'
 import {findoutLanguage, convertIndex} from './char-processors.js'
 
 export default function convertToWord(numStr) {
