@@ -1,12 +1,13 @@
 export default function getFormattedNumber(numStr) {
     numStr = String(numStr);
+    if(!numStr) return '';
+
     let formattedNumber = '';
 
     if (numStr.startsWith('-') || numStr.startsWith('+')) {
         formattedNumber = String(numStr[0]);
         numStr = numStr.substring(1);
     }
-
     const [beforeDecimal, afterDecimal] = numStr.split('.');
 
     formattedNumber += getFormattedInteger(beforeDecimal);

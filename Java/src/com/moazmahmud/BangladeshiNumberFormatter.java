@@ -4,6 +4,8 @@ import java.util.regex.Pattern;
 
 public class BangladeshiNumberFormatter {
     public static String getFormattedNumber(String numStr) {
+        if(numStr == null || numStr.isEmpty()) return "";
+
         StringBuilder formattedNumber = new StringBuilder();
 
         if (numStr.startsWith("-") || numStr.startsWith("+")) {
@@ -13,7 +15,10 @@ public class BangladeshiNumberFormatter {
 
         String[] decimalPointSplit = numStr.split(Pattern.quote("."));
 
-        formattedNumber.append(getFormattedInteger(decimalPointSplit[0]));
+        if (numStr.startsWith("."))
+            formattedNumber.append(".").append(decimalPointSplit[0]);
+        else
+            formattedNumber.append(getFormattedInteger(decimalPointSplit[0]));
 
         if (decimalPointSplit.length > 1)
             formattedNumber.append(".").append(decimalPointSplit[1]);
