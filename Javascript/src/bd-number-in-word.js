@@ -1,24 +1,47 @@
 import {constantByLanguage, numberToWord} from './constants.js'
 import getFormattedNumber, {getLakhCroreSplit} from './bd-number-formatter.js'
-import {findoutLanguage, convertIndex} from './char-processors.js'
+import {findOutLanguage, convertIndex} from './char-processors.js'
 
 export default function convertToWord(numStr) {
     numStr = String(numStr);
-    const language = findoutLanguage(numStr);
-    
+    const language = findOutLanguage(numStr);
+
+    let inWord = '';
+
+    const startsWithMinus = numStr.startsWith('-');
+    const startsWithPlus = numStr.startsWith('+');
+    if (startsWithPlus || startsWithMinus) {
+        numStr = numStr.substring(1);
+        inWord = startsWithMinus ? constantByLanguage[`${language}-`] + ' '
+                                 : '';
+    }
+
+    const [beforeDecimal, afterDecimal] = numStr.split('.');
+
+    inWord += convertToWordInteger(beforeDecimal, language);
+
+    const afterDecimalInWord = convertToWordAfterDecimalPoint(afterDecimal, language);
+    if (afterDecimalInWord !== '')
+        inWord += ` ${constantByLanguage[language + '.']} ${afterDecimalInWord}`;
+
+    return inWord;
+}
+
+function convertToWordInteger(numStr, language) {
     if (numStr.length <= 7)
         return convertToWordBelowCrore(getFormattedNumber(numStr), language);
 
     const {lakh, crore} = getLakhCroreSplit(numStr);
 
-    return convertToWord(crore, language)
-        .concat(" ")
-        .concat(constantByLanguage[language + "Crore"])
-        .concat(" ")
-        .concat(convertToWordBelowCrore(
-            getFormattedNumber(lakh),
-            language
-        ));
+    return convertToWordInteger(crore, language)
+        + " " + constantByLanguage[language + "Crore"]
+        + " " + convertToWordBelowCrore(getFormattedNumber(lakh), language);
+}
+
+function convertToWordAfterDecimalPoint(numStr, language) {
+    if (!numStr) return '';
+    return [...String(numStr)].map(digit => convertToWordBelowHundred(digit, language))
+                              .join(' ');
 }
 
 function convertToWordBelowCrore(bangladeshiCommaFormattedNumber, language) {

@@ -1,11 +1,27 @@
 export default function getFormattedNumber(numStr) {
     numStr = String(numStr);
+    let formattedNumber = '';
+
+    if (numStr.startsWith('-') || numStr.startsWith('+')) {
+        formattedNumber = String(numStr[0]);
+        numStr = numStr.substring(1);
+    }
+
+    const [beforeDecimal, afterDecimal] = numStr.split('.');
+
+    formattedNumber += getFormattedInteger(beforeDecimal);
+    if(afterDecimal) formattedNumber += `.${afterDecimal}`;
+
+    return formattedNumber;
+}
+
+function getFormattedInteger(numStr) {
     if (numStr.length <= 7)
         return getFormattedNumberBelowCrore(numStr);
 
     const { lakh, crore } = getLakhCroreSplit(numStr);
 
-    return getFormattedNumber(crore) + "," + getFormattedNumberBelowCrore(lakh);
+    return getFormattedInteger(crore) + "," + getFormattedNumberBelowCrore(lakh);
 }
 
 export function getLakhCroreSplit(numStr) {

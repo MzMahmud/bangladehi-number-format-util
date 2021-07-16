@@ -2,10 +2,14 @@ export const BANGLA = 'bangla';
 export const ENGLISH = 'english';
 
 export const constantByLanguage = {
+    "bangla.": "দশমিক",
+    "bangla-": "ঋণাত্মক",
     "bangla0": "০",
     "bangla00": "০০",
     "bangla100": "১০০",
     "banglaCrore": "কোটি",
+    "english.": "point",
+    "english-": "negative",
     "english0": "0",
     "english00": "00",
     "english100": "100",

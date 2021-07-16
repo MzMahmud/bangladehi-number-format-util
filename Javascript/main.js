@@ -13,7 +13,7 @@ function testInput(input) {
 }
 
 const inputs = [
-    0,
+    -456444064,
     9,
     11,
     50,
@@ -24,7 +24,9 @@ const inputs = [
     200,
     404,
     420,
-    '85154646464'
+    '85154646464',
+    -64679793.14155623,
+    -9790106
 ];
 
 const banglaInputs = inputs.map(num => convertString(num, ENGLISH, BANGLA));
