@@ -28,6 +28,8 @@ export default function convertToWord(numStr) {
 }
 
 function convertToWordInteger(numStr, language) {
+    if(!numStr) return '';
+
     if (numStr.length <= 7)
         return convertToWordBelowCrore(getFormattedNumber(numStr), language);
 

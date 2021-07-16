@@ -13,7 +13,7 @@ function testInput(input) {
 }
 
 const inputs = [
-    '.647',
+    '.061407',
     9,
     11,
     50,
