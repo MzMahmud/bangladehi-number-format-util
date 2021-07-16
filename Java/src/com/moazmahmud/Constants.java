@@ -1,4 +1,4 @@
-package bangladehi_number_format_util;
+package com.moazmahmud;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,10 +10,15 @@ public class Constants {
     public static final String ENGLISH = "english";
 
     static {
+        constantByLanguage.put("bangla.", "দশমিক");
+        constantByLanguage.put("bangla-", "ঋণাত্মক");
         constantByLanguage.put("bangla0", "০");
         constantByLanguage.put("bangla00", "০০");
         constantByLanguage.put("bangla100", "১০০");
         constantByLanguage.put("banglaCrore", "কোটি");
+
+        constantByLanguage.put("english.", "point");
+        constantByLanguage.put("english-", "negative");
         constantByLanguage.put("english0", "0");
         constantByLanguage.put("english00", "00");
         constantByLanguage.put("english100", "100");

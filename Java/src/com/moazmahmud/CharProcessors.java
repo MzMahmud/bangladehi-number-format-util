@@ -1,4 +1,4 @@
-package bangladehi_number_format_util;
+package com.moazmahmud;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -46,14 +46,19 @@ public class CharProcessors {
         return digitsByLanguage.get(toLanguage).get(index);
     }
 
-    private static boolean isDigit(int digit) {
-        return 0 <= digit && digit <= 9;
+    public static void reverseStrArrayInPlace(String[] a) {
+        int i = 0, j = a.length - 1;
+        while (i <= j) {
+            String temp = a[i];
+            a[i] = a[j];
+            a[j] = temp;
+            i++;
+            j--;
+        }
     }
 
-    public static void main(String[] args) throws Exception {
-        System.out.println(
-                convertString("+৪৬৪৬৪৪১১.৬৬৪৬", Constants.BANGLA, Constants.ENGLISH)
-        );
+    private static boolean isDigit(int digit) {
+        return 0 <= digit && digit <= 9;
     }
 
     // returns a isSubSet b
