@@ -1,0 +1,17 @@
+{
+  "name": "bangladehi-number-format-util",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "This is a project to convert any Bangla or English number string into Bangladeshi number format which is the Crore-Lakh system. The conversion is of two types given a number string seperate the number with comma in Bangladeshi format. Also convert the number into words.",
+  "scripts": {
+    "test": "node main.js"
+  },
+  "keywords": [
+    "bangladeshi number",
+    "lakh crore",
+    "number in word",
+    "bangla number in word"
+  ],
+  "author": "Moaz Mahmud",
+  "license": "ISC"
+}
