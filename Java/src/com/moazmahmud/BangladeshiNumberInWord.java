@@ -9,6 +9,8 @@ import static com.moazmahmud.Constants.constantByLanguage;
 
 public class BangladeshiNumberInWord {
     public static String convertToWord(String numStr) throws Exception {
+        if(numStr == null || numStr.isEmpty()) return "";
+
         String language = findOutLanguage(numStr);
 
         StringBuilder inWord = new StringBuilder();
@@ -46,6 +48,8 @@ public class BangladeshiNumberInWord {
     }
 
     private static String convertToWordInteger(String numStr, String language) throws Exception {
+        if(numStr == null || numStr.isEmpty()) return "";
+
         if (numStr.length() <= 7)
             return convertToWordBelowCrore(
                     BangladeshiNumberFormatter.getFormattedNumber(numStr),

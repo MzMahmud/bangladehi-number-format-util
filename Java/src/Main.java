@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 public class Main {
     public static void main(String[] args) {
         List<String> inputs = Arrays.asList(
-                "-456444064",
+                ".4640341",
                 "9",
                 "11",
                 "50",
