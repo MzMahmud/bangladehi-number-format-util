@@ -1,4 +1,4 @@
-# Bangladehi Number Format Util
+# Bangladeshi Number Format Util
 This is a project to convert any Bangla or English number string into Bangladeshi number format which is the [Crore-Lakh](https://en.wikipedia.org/wiki/Bengali_numerals) system. 
 
 This project gives two APIs.
