@@ -4,7 +4,7 @@ import java.util.regex.Pattern;
 
 public class BangladeshiNumberFormatter {
     public static String getFormattedNumber(String numStr) {
-        if(numStr == null || numStr.isEmpty()) return "";
+        if (numStr == null || numStr.isEmpty()) return "";
 
         StringBuilder formattedNumber = new StringBuilder();
 
@@ -15,10 +15,7 @@ public class BangladeshiNumberFormatter {
 
         String[] decimalPointSplit = numStr.split(Pattern.quote("."));
 
-        if (numStr.startsWith("."))
-            formattedNumber.append(".").append(decimalPointSplit[0]);
-        else
-            formattedNumber.append(getFormattedInteger(decimalPointSplit[0]));
+        formattedNumber.append(getFormattedInteger(decimalPointSplit[0]));
 
         if (decimalPointSplit.length > 1)
             formattedNumber.append(".").append(decimalPointSplit[1]);
@@ -42,7 +39,9 @@ public class BangladeshiNumberFormatter {
         return lakhCrore;
     }
 
-    private static String getFormattedInteger(String numStr){
+    private static String getFormattedInteger(String numStr) {
+        if (numStr == null || numStr.isEmpty()) return "";
+
         if (numStr.length() <= 7)
             return getFormattedNumberBelowCrore(numStr);
 
