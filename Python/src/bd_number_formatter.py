@@ -13,7 +13,7 @@ def get_formatted_number(num_str: str) -> str:
 
     if len(decimal_split) > 1:
         formatted_number += f'.{decimal_split[1]}'
-        
+
     return formatted_number
 
 
@@ -47,7 +47,3 @@ def get_formatted_number_below_crore(num_str: str) -> str:
 
 def is_separator(char_order: int) -> bool:
     return char_order == 4 or (char_order > 4 and char_order % 2 == 0)
-
-
-num = '12344567069745.120464'
-print(get_formatted_number(num))

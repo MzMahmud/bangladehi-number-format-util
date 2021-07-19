@@ -70,7 +70,8 @@ point zero six four one
 ```
 
 ## Installation
-As until now, this project is implemented in `Java` and `Javaspript`. 
+As until now, this project is implemented in `Java`, `Javaspript`, `Python`. 
 
 - `Java` implementation is written in `JDK 11`. The code would work for `Java 8+`.
 - `Javaspript` implementation uses `ES6` syntax and `modules`. For using in browser use `<script type="module" src="main.js"></script>`. In node use `"type": "module"` in `package.json`
+- `Python` implementation is written in `python 3.8`. The code should work for `python 3.5+`.
