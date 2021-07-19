@@ -70,4 +70,7 @@ point zero six four one
 ```
 
 ## Installation
-As until now, this project is implemented in `Java` and `Javaspript`. Both the implementation is done with raw language, that is not any external library is needed. 
+As until now, this project is implemented in `Java` and `Javaspript`. 
+
+- `Java` implementation is written in `JDK 11`. The code would work for `Java 8+`.
+- `Javaspript` implementation uses `ES6` syntax and `modules`. For using in browser use `<script type="module" src="main.js"></script>`. In node use `"type": "module"` in `package.json`
