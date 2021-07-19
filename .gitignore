@@ -4,3 +4,4 @@ Javascript/.idea/*
 Java/out/*
 Python/.idea/*
 Python/__pycache__/*
+Python/src/__pycache__/*
