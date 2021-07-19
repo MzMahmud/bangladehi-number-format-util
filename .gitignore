@@ -2,3 +2,5 @@ Java/*.iml
 Java/.idea/*
 Javascript/.idea/*
 Java/out/*
+Python/.idea/*
+Python/__pycache__/*
